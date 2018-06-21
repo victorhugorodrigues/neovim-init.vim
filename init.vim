@@ -1,3 +1,9 @@
+" TODO:
+" copy block remap
+" search inside files plugin
+" jump to declaration plugin
+" search declaration inside file plugin
+
 set guicursor=          " Fix the cursor on terminal
 set number              " Show the line numbers on the left side
 set formatoptions+=o    " Continue comment marker on the left side
@@ -10,8 +16,13 @@ nnoremap ; :
 " Remaping Leader key
 let mapleader="\<SPACE>"
 
+" Remapping page down and page up
+map m <C-f>
+map , <C-b>
+
+
 " Open file menu
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>r :CtrlP<CR>
 " Open buffer menu
 nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
@@ -95,6 +106,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+" Plugin Airline config
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
