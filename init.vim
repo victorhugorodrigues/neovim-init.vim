@@ -29,6 +29,17 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
 
+" Remapping next, previous and close tab
+map <Leader>, :bnext<CR>
+map <Leader>m :bprevious<CR>
+map <Leader>q :bdelete<CR>
+
+
+" Remapping deoplete auto complete to use TAB
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines. VERY useful!
 if &listchars ==# 'eol:$'
