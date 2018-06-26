@@ -35,9 +35,25 @@ map <Leader>m :bprevious<CR>
 map <Leader>q :bdelete<CR>
 
 
+" Remapping ctags navigation
+map <Leader>l <C-]>
+map <Leader>h <C-t>
+
+
+" Remapping Ctrl-Space for completions. Heck Yeah!
+" inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+" inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+" inoremap <expr><C-l> pumvisible() ? "\<C-y>" : "\<C-l>"
+
+
 " Remapping deoplete auto complete to use TAB
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
+"Remapping search tags on current buffer
+nnoremap <Leader>o :CtrlPBufTag<CR>
+
 
 
 " Tell Vim which characters to show for expanded TABs,
