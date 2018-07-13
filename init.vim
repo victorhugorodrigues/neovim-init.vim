@@ -30,14 +30,14 @@ nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
 
 " Remapping next, previous and close tab
-map <Leader>, :bnext<CR>
-map <Leader>m :bprevious<CR>
+map <C-k> :bnext<CR>
+map <C-j> :bprevious<CR>
 map <Leader>q :bdelete<CR>
 
 
 " Remapping ctags navigation
-map <Leader>l <C-]>
-map <Leader>h <C-t>
+map <C-l> <C-]>
+map <C-h> <C-t>
 
 
 " Remapping Ctrl-Space for completions. Heck Yeah!
@@ -51,9 +51,21 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
+" Removing preview-window on omnicompletion
+:set completeopt-=preview
+
+
 "Remapping search tags on current buffer
 nnoremap <Leader>o :CtrlPBufTag<CR>
 
+
+" Remapping autocomplete
+inoremap <C-space> <C-x><C-o>
+
+
+" Remapping Ack search
+nnoremap <Leader>h :Ack!<Space>
+nnoremap <Leader>w :ccl<CR>
 
 
 " Tell Vim which characters to show for expanded TABs,
@@ -120,6 +132,22 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 
 
+" Plugin: vim-gutentags
+" Plug 'ludovicchabant/vim-gutentags'
+
+
+" Plugin: craigemery/vim-autotag
+Plug 'craigemery/vim-autotag'
+
+
+" Plugin: Valloric/YouCompleteMe
+" Plug 'Valloric/YouCompleteMe'
+
+
+" Plugin: 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
+
+
 " Initialize plugin system
 call plug#end()
 
@@ -158,3 +186,31 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.space = "\ua0"
 
+
+" Config open new buffer with unsaved one
+" fun! SPLITAG() range
+  " let oldfile=expand("%:p")
+  " if &modified
+    " split
+  " endif
+  " exe "tag ". expand("<cword>")
+  " let curfile=expand("%:p")
+  " if curfile == oldfile
+    " let pos=getpos(".")
+    " if &modified
+      " if we have split before:
+      " " quit
+    " endif
+    " call setpos('.', pos)
+  " endif
+" endfun
+" nmap <C-]> :call SPLITAG()<CR>z.
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+let g:min_pattern_length = 1
+let g:deoplete#enable_ignore_case = 'ignorecase'
+let g:deoplete#auto_completion_start_length = 0
+
+let g:ack_default_options = " --ignore-dir=.tox --ignore-dir=.testrepository --ignore-dir=.eggs --ignore-dir=.vscode --ignore-dir=doc --ignore-file=is:tags --ignore-file=is:redfish.log"
