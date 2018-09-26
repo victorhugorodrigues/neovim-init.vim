@@ -1,14 +1,12 @@
 " TODO:
 " copy block remap
-" search inside files plugin
-" jump to declaration plugin
-" search declaration inside file plugin
 
 set guicursor=          " Fix the cursor on terminal
 set number              " Show the line numbers on the left side
 set formatoptions+=o    " Continue comment marker on the left side
 set expandtab           " Insert spaces when TAB is pressed
 set tabstop=4           " Render TABs using this many spaces
+set colorcolumn=79      " Render vertical line at 79 char space
 
 " Remapping command shortkey
 nnoremap ; :
