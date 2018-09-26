@@ -65,6 +65,8 @@ inoremap <C-space> <C-x><C-o>
 nnoremap <Leader>h :Ack!<Space>
 nnoremap <Leader>w :ccl<CR>
 
+" Remapping ALEFix pep8 for indentation
+nnoremap <Leader>f :ALEFix autopep8<CR>
 
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines. VERY useful!
@@ -145,6 +147,14 @@ Plug 'craigemery/vim-autotag'
 " Plugin: 'mileszs/ack.vim'
 Plug 'mileszs/ack.vim'
 
+" Plugin: 'python-mode'
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
+
+" Plugin: 'vim-python-pep8-indent'
+" Plug 'Vimjas/vim-python-pep8-indent'
+
+" Plugin: 'Asynchronous Lint Engine'
+Plug 'w0rp/ale', { 'do': 'pip install flake8 isort yapf' }
 
 " Initialize plugin system
 call plug#end()
