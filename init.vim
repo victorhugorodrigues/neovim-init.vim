@@ -211,4 +211,4 @@ let g:min_pattern_length = 1
 let g:deoplete#enable_ignore_case = 'ignorecase'
 let g:deoplete#auto_completion_start_length = 0
 
-let g:ack_default_options = " --ignore-dir=.tox --ignore-dir=.testrepository --ignore-dir=.eggs --ignore-dir=.vscode --ignore-dir=doc --ignore-file=is:tags --ignore-file=is:redfish.log"
+let g:ack_default_options = " -s --ignore-dir={.tox,.testrepository,.eggs,.vscode,doc,.pytest_cache,.git} --ignore-file=is:{tags,redfish.log,.coverage,.coveragerc,.gitignore,test-requirements.txt,SOURCES.txt,PKG-INFO,.testr.conf} --ignore-file=ext:pyc"
